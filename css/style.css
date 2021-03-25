@@ -15,24 +15,32 @@ html, body {
   display: flex;
   flex-direction: column;
   background-color: aquamarine;
+  box-sizing: border-box;
 }
-
-.row {
+.table-container .row {
   display: flex;
   justify-content: stretch;
   width: 100%;
   background-color: blue;
+  box-sizing: border-box;
 }
-
-.heading {
-  width: 10%;
+.table-container .row .heading {
+  flex-basis: 10%;
 }
-
-.box {
+.table-container .row .cell {
+  flex-basis: 4%;
+}
+.table-container .row .box {
   border: 1px solid black;
   height: 100%;
-  flex-basis: au;
   background-color: azure;
+  box-sizing: border-box;
+}
+.table-container .row input {
+  box-sizing: border-box;
+  padding: 0;
+  width: 100%;
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
