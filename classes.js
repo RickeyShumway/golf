@@ -1,8 +1,8 @@
+
 class Player {
-    constructor(name, teeColor, hCap) {
+    constructor(name, teeColor) {
         this.name = name;
         this.teeColor = teeColor;
-        this.hCap = hCap;
         this.strokes = this.out + this.in;
         this.out = 0;
         this.in = 0;
@@ -32,3 +32,4 @@ class Player {
 let rickey = new Player("rickey", "white", 10);
 rickey.score(1, 4);
 rickey.editPlayer('teeColor', "red")
+export { rickey, Player };
