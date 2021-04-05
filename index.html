@@ -5,17 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <script type="module" defer src="script.js"></script>
+    <script defer src ="api.js"></script>
     <title>Golf Scorecard</title>
 </head>
 <body>
     <div class="container">
         <div class="top-bar">
+            <div class='left'>
             <div class="title">
                 Golf Scorecard
             </div>
             <div id="course">Course Name</div>
+            <button id="add-player-btn">ADD PLAYER</button>
+           
+            </div>
+            <div class='right'>
+                <div class="dropdown">
+                    <button id="course-btn">CHOOSE COURSE</button>
+                    <div id="course-drop" class="drop-content">
+                        <div>1</div>
+                        <div>2</div>
+                        <div>3</div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button id="tee-btn">CHOOSE TEE</button>
+                    <div id="course-drop" class="drop-content">
+                        <div>Black</div>
+                        <div>Blue</div>
+                        <div>White</div>
+                        <div>Red</div>
+                    </div>
+                </div>
+            </div>
         </div>
-            <div id='table-contain' class="table-container">
+        <div id='table-contain' class="table-container">
                 <div class="row color-row">
                     <div class="heading box">HOLE</div>
                     <div class="box cell">1</div>
@@ -184,7 +208,8 @@
                     <div class="heading box"></div>
                     <div class="heading box"></div>
                 </div>
-            </div>
+        </div>
+        
     </div>
 </body>
 </html>

@@ -1,35 +1,31 @@
 
 class Player {
-    constructor(name, teeColor) {
+    constructor(name) {
         this.name = name;
-        this.teeColor = teeColor;
         this.strokes = this.out + this.in;
         this.out = 0;
         this.in = 0;
-        this.hole = [];
+        this.holeScore = [];
     }
 
     score (hole, score) {
         let out = 0;
         let inn = 0;
-        this.hole[hole] = score;
+        this.holeScore[hole] = score;
         for(let i = 1; i <=18; i++) {
             if(i <= 9) {
-                out+=this.hole[i];
+                out+=this.holeScore[i];
             } else {
-                inn+=this.hole[i];
+                inn+=this.holeScore[i];
             }
         }
         this.out = out;
         this.in = inn;
     }
 
-    editPlayer(prop, newProp) {
-        this[prop] = newProp;
+    editName(prop, value) {
+        this[prop] = value;
     }
 }
 
-let rickey = new Player("rickey", "white", 10);
-rickey.score(1, 4);
-rickey.editPlayer('teeColor', "red")
-export { rickey, Player };
+export { Player };

@@ -1,16 +1,27 @@
-import { rickey, Player} from './classes.js';
+import { Player} from './classes.js';
 // document.getElementById('h1').addEventListener('click', function() {
 //     document.getElementById('test').style.display = 'flex';
 //     document.getElementById('h1-score').style.display = 'none';
 // })
 
 // document.getElementById('row-p1').addEventListener('click', function(e) {
-let playerList = [];
-let addPlayer = function (name, teeColor, hCap, position) {
-    let newPlayer = new Player(name, teeColor, hCap, position);
-    playerList[position] = newPlayer;
+let currentBoard = {
+    course: {
+        holes: [],
+    },
+    players: [],
+    tee: null,
+    
+    addPlayer : function (name) {
+        let newPlayer = new Player(name);
+        this.players.push(newPlayer);
+        },
+    chooseTee : function (color) {
+        this.tee = color;
+    },
+    
+};
 
-    }
 document.getElementById('table-contain').addEventListener('click', function(e) {
 
     let findId = function(id, symbol) {
@@ -79,4 +90,13 @@ document.getElementById('table-contain').addEventListener('blur', function(e) {
 
 
 }, true)
-// console.log(rickey);
+document.getElementById('course-btn').addEventListener('click', function () {
+    let style = document.getElementById('course-drop');
+
+    if(style.style.display == 'none') {
+        style.style.display = 'flex';
+    } else {
+        style.style.display = 'none';
+    };
+})
+

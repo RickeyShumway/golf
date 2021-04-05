@@ -7,6 +7,17 @@ html, body {
 }
 .top-bar {
     height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    .right {
+        display: flex;
+        .dropdown {
+            .drop-content {
+                position: absolute;
+                display: none;
+            }
+        }
+    }
 }
 .table-container {
     width: 100%;
