@@ -1,7 +1,8 @@
-// console.log('this is a test')
-// $.getJSON("https://golf-courses-api.herokuapp.com/courses", function() {
+import { currentBoard }  from './script.js';
+import { Player } from './classes.js';
+import { renderCourses } from './render.js';
 
-// })
+
 function httpReq (method, url) {
     let promise = new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
@@ -17,7 +18,9 @@ function httpReq (method, url) {
  
 function getCourses () {
     httpReq('GET', 'https://golf-courses-api.herokuapp.com/courses').then(responseData => {
-        console.log(responseData);
+        currentBoard.courses = responseData.courses;
+        //console.log(currentBoard.courses)
+        renderCourses();
     });
 };
 
@@ -27,4 +30,6 @@ function getHole (id) {
     });
 }
 
-document.getElementById('course-btn').addEventListener('click', ()=> {getHole(11819)})
+document.getElementById('course-btn').addEventListener('click', getCourses)
+
+export { httpReq, getCourses, getHole };

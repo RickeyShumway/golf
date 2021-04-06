@@ -1,4 +1,7 @@
-import { Player} from './classes.js';
+import { Player } from './classes.js';
+import { render, renderCourses } from './render.js';
+import { httpReq, getCourses, getHole } from './api.js'
+
 // document.getElementById('h1').addEventListener('click', function() {
 //     document.getElementById('test').style.display = 'flex';
 //     document.getElementById('h1-score').style.display = 'none';
@@ -6,10 +9,14 @@ import { Player} from './classes.js';
 
 // document.getElementById('row-p1').addEventListener('click', function(e) {
 let currentBoard = {
-    course: {
-        holes: [],
-    },
+    courseId: null,
+    courses: [],
+    selectedCourse: {},
     players: [],
+    p1: null,
+    p2: null,
+    p3: null,
+    p4: null,
     tee: null,
     
     addPlayer : function (name) {
@@ -32,7 +39,7 @@ document.getElementById('table-contain').addEventListener('click', function(e) {
     let updateScore;
     let splitId = findId(e.target.id, "_")[1];
     let findSecondId = findId(splitId, "-")[0];
-    console.log("this is the first split: "+splitId, "this is the second split: " + findSecondId);
+    // console.log("this is the first split: "+splitId, "this is the second split: " + findSecondId);
     let showInput = function(x) {
         document.getElementById('input_' + x).style.display = 'flex';
         document.getElementById('score_' + x).style.display = 'none';
@@ -66,7 +73,7 @@ document.getElementById('table-contain').addEventListener('blur', function(e) {
     let getInputValue = function(x) {
         let userInput = document.getElementById('input_' + x);
 
-        console.log("User input: " + userInput.value, 'Player and Hole: ' + x);
+        // console.log("User input: " + userInput.value, 'Player and Hole: ' + x);
         player = findId(x, "-")[0];
         hole = findId(x,'-')[1];
         inputValue = userInput.value;
@@ -77,26 +84,63 @@ document.getElementById('table-contain').addEventListener('blur', function(e) {
         inputValue = userInput.value;
         userInput.style.display = 'none';
         document.getElementById('name_' + x).style.display = 'flex';
+        if(currentBoard[x] == null) {
+            currentBoard[x] = new Player(inputValue);
+            console.log(currentBoard[x], currentBoard)
+        } else {
+            currentBoard[x].name = inputValue;
+        }
+        
     }
 
     if(e.target.className == 'name-value') {
         getNameValue(splitId);
-        console.log("this is second id")
+        // console.log("this is second id")
     } else {
         getInputValue(splitId);
     }
     
-    console.log(player, hole, inputValue)
-
+    render();
 
 }, true)
-document.getElementById('course-btn').addEventListener('click', function () {
-    let style = document.getElementById('course-drop');
-
-    if(style.style.display == 'none') {
-        style.style.display = 'flex';
+document.getElementById('course-btn').addEventListener('click', getCourses);
+document.getElementById('tee-btn').addEventListener('click', ()=> {
+    let teeDrop = document.getElementById('tee-drop');
+    if(teeDrop.style.display == 'flex') {
+        teeDrop.style.display = 'none';
     } else {
-        style.style.display = 'none';
+        teeDrop.style.display = 'flex';
     };
+});
+document.getElementById('course-drop').addEventListener('click', (e) => {
+    currentBoard.courseId = e.target.id;
+    console.log(currentBoard.courseId);
+    let courseDrop = document.getElementById('course-drop');
+    if(courseDrop.style.display == 'flex') {
+        courseDrop.style.display = 'none';
+    } else {
+        courseDrop.style.display = 'flex';
+    };
+    render();
+    
+})
+document.getElementById('tee-drop').addEventListener('click', (e) => {
+    currentBoard.tee = e.target.id;
+    console.log(currentBoard.tee);
+    let teeDrop = document.getElementById('tee-drop');
+    if(teeDrop.style.display == 'flex') {
+        teeDrop.style.display = 'none';
+    } else {
+        teeDrop.style.display = 'flex';
+    };
+
 })
 
+export { currentBoard };
+// let style = document.getElementById('course-drop');
+
+// if(style.style.display == 'none') {
+//     style.style.display = 'flex';
+// } else {
+//     style.style.display = 'none';
+// };

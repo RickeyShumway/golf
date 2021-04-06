@@ -27,5 +27,4 @@ class Player {
         this[prop] = value;
     }
 }
-
 export { Player };

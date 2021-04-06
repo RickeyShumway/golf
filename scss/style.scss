@@ -12,9 +12,17 @@ html, body {
     .right {
         display: flex;
         .dropdown {
+            #course-drop {
+            
+            }
+            #tee-drop {
+                display: none;
+            }
             .drop-content {
                 position: absolute;
-                display: none;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
             }
         }
     }
@@ -26,12 +34,16 @@ html, body {
     flex-direction: column;
     background-color: aquamarine;
     box-sizing: border-box;
+    
     .row {
         display: flex;
         justify-content: stretch;
         width: 100%;
         background-color: blue;
         box-sizing: border-box;
+        #row-p1 {
+            display: none;
+        }
         .heading {
             flex-basis: 10%;
         }
@@ -43,6 +55,7 @@ html, body {
             height: 100%;
             background-color: azure;
             box-sizing: border-box;
+            overflow-x:hidden;
         }
         input {
             box-sizing: border-box;

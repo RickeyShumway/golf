@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <script type="module" defer src="script.js"></script>
-    <script defer src ="api.js"></script>
+    <script type ="module" defer src ="api.js"></script>
     <title>Golf Scorecard</title>
 </head>
 <body>
@@ -23,18 +23,15 @@
                 <div class="dropdown">
                     <button id="course-btn">CHOOSE COURSE</button>
                     <div id="course-drop" class="drop-content">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
                     </div>
                 </div>
                 <div class="dropdown">
                     <button id="tee-btn">CHOOSE TEE</button>
-                    <div id="course-drop" class="drop-content">
-                        <div>Black</div>
-                        <div>Blue</div>
-                        <div>White</div>
-                        <div>Red</div>
+                    <div id="tee-drop" class="drop-content">
+                        <div id="black" class ="drop-item">Black/Pro</div>
+                        <div id="blue" class ="drop-item">Blue/Champion</div>
+                        <div id="white" class ="drop-item">White/Men</div>
+                        <div id="red" class ="drop-item">Red/Women</div>
                     </div>
                 </div>
             </div>
@@ -89,7 +86,7 @@
                     <div id='total_p1' class="heading box"></div>
                 </div>
                 <div id ="row-p2" class="row color-row">
-                    <div id='title_p2' class="heading box name"><input id='name-input_p2' type='text' class="name-value"><div id='name_p2' class="p-name">Player 1</div></div>
+                    <div id='title_p2' class="heading box name"><input id='name-input_p2' type='text' class="name-value"><div id='name_p2' class="p-name">Player 2</div></div>
                     <div id='hole_p2-1' class="box cell"><input id='input_p2-1' type='number'><div id="score_p2-1"></div></div>
                     <div id='hole_p2-2' class="box cell"><input id='input_p2-2' type='number'><div id="score_p2-2"></div></div>
                     <div id='hole_p2-3' class="box cell"><input id='input_p2-3' type='number'><div id="score_p2-3"></div></div>
@@ -113,7 +110,7 @@
                     <div id='total_p2' class="heading box"></div>
                 </div>
                 <div id ="row-p3" class="row color-row">
-                    <div id='title_p3' class="heading box name"><input id='name-input_p3' type='text' class="name-value"><div id='name_p3' class="p-name">Player 1</div></div>
+                    <div id='title_p3' class="heading box name"><input id='name-input_p3' type='text' class="name-value"><div id='name_p3' class="p-name">Player 3</div></div>
                     <div id='hole_p3-1' class="box cell"><input id='input_p3-1' type='number'><div id="score_p3-1"></div></div>
                     <div id='hole_p3-2' class="box cell"><input id='input_p3-2' type='number'><div id="score_p3-2"></div></div>
                     <div id='hole_p3-3' class="box cell"><input id='input_p3-3' type='number'><div id="score_p3-3"></div></div>
@@ -137,7 +134,7 @@
                     <div id='total_p3' class="heading box"></div>
                 </div>
                 <div id ="row-p4" class="row color-row">
-                    <div id='title_p4' class="heading box name"><input id='name-input_p4' type='text' class="name-value"><div id='name_p4' class="p-name">Player 1</div></div>
+                    <div id='title_p4' class="heading box name"><input id='name-input_p4' type='text' class="name-value"><div id='name_p4' class="p-name">Player 4</div></div>
                     <div id='hole_p4-1' class="box cell"><input id='input_p4-1' type='number'><div id="score_p4-1"></div></div>
                     <div id='hole_p4-2' class="box cell"><input id='input_p4-2' type='number'><div id="score_p4-2"></div></div>
                     <div id='hole_p4-3' class="box cell"><input id='input_p4-3' type='number'><div id="score_p4-3"></div></div>
@@ -161,7 +158,7 @@
                     <div id='total_p4' class="heading box"></div>
                 </div>
                 <div class="row color-row">
-                    <div class="heading box">Par</div>
+                    <div class="heading box name">Par</div>
                     <div class="box cell"></div>
                     <div class="box cell"></div>
                     <div class="box cell"></div>
@@ -185,7 +182,7 @@
                     <div class="heading box"></div>
                 </div>
                 <div class="row color-row">
-                    <div class="heading box">Yards</div>
+                    <div class="heading box name">Yards</div>
                     <div class="box cell"></div>
                     <div class="box cell"></div>
                     <div class="box cell"></div>
