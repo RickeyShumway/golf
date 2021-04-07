@@ -1,6 +1,6 @@
 import { currentBoard }  from './script.js';
 import { Player } from './classes.js';
-import { renderCourses } from './render.js';
+import { render, renderCourses } from './render.js';
 
 
 function httpReq (method, url) {
@@ -18,15 +18,19 @@ function httpReq (method, url) {
  
 function getCourses () {
     httpReq('GET', 'https://golf-courses-api.herokuapp.com/courses').then(responseData => {
-        currentBoard.courses = responseData.courses;
-        //console.log(currentBoard.courses)
+        currentBoard.course = responseData.courses;
+        //console.log(currentBoard.course)
         renderCourses();
     });
 };
 
 function getHole (id) {
     httpReq('GET', 'https://golf-courses-api.herokuapp.com/courses/' + id).then(responseData => {
-        console.log(responseData)
+
+        currentBoard.holes = responseData.data.holes;
+        //console.log(responseData.data.holes)
+        render();
+        
     });
 }
 

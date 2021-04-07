@@ -10,9 +10,10 @@ import { httpReq, getCourses, getHole } from './api.js'
 // document.getElementById('row-p1').addEventListener('click', function(e) {
 let currentBoard = {
     courseId: null,
-    courses: [],
+    course: [],
     selectedCourse: {},
     players: [],
+    holes: [],
     p1: null,
     p2: null,
     p3: null,
@@ -75,9 +76,12 @@ document.getElementById('table-contain').addEventListener('blur', function(e) {
 
         // console.log("User input: " + userInput.value, 'Player and Hole: ' + x);
         player = findId(x, "-")[0];
-        hole = findId(x,'-')[1];
+        hole = findId(x,'-')[1]-1;
         inputValue = userInput.value;
         userInput.style.display = 'none';
+        console.log(player)
+        currentBoard[player].holeScore[hole] = inputValue;
+        console.log("this is the score",currentBoard[player])
     }
     let getNameValue = function(x) {
         let userInput = document.getElementById('name-input_' + x);
@@ -90,7 +94,7 @@ document.getElementById('table-contain').addEventListener('blur', function(e) {
         } else {
             currentBoard[x].name = inputValue;
         }
-        
+        render();
     }
 
     if(e.target.className == 'name-value') {
@@ -113,19 +117,30 @@ document.getElementById('tee-btn').addEventListener('click', ()=> {
     };
 });
 document.getElementById('course-drop').addEventListener('click', (e) => {
-    currentBoard.courseId = e.target.id;
-    console.log(currentBoard.courseId);
+    
+    let target = e.target.id;
+    
+    let chosenCourse;
+    // console.log(currentBoard.courseId);
+    for(let i = 0; i < currentBoard.course.length; i++) {
+        if(currentBoard.course[i].id == target) {
+            chosenCourse = currentBoard.course[i];
+        }
+    }
+    currentBoard.selectedCourse = chosenCourse;
+    currentBoard.courseId = target;
+    
     let courseDrop = document.getElementById('course-drop');
     if(courseDrop.style.display == 'flex') {
         courseDrop.style.display = 'none';
     } else {
         courseDrop.style.display = 'flex';
     };
-    render();
-    
+    currentBoard.holes = getHole(target);
 })
 document.getElementById('tee-drop').addEventListener('click', (e) => {
     currentBoard.tee = e.target.id;
+
     console.log(currentBoard.tee);
     let teeDrop = document.getElementById('tee-drop');
     if(teeDrop.style.display == 'flex') {
