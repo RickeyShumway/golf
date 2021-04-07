@@ -94,7 +94,6 @@ document.getElementById('table-contain').addEventListener('blur', function(e) {
         } else {
             currentBoard[x].name = inputValue;
         }
-        render();
     }
 
     if(e.target.className == 'name-value') {
