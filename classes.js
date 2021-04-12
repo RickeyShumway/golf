@@ -24,7 +24,7 @@ class Player {
             this.out = 0;
             this.in = 0;
             this.total = 0;
-            for(let i = 0; i < this.holeScore.length; i++) {
+            for(let i = 0; i < 18; i++) {
                 if(this.holeScore[i]) {
                     if(i < 8) {
                         this.total += parseInt(this.holeScore[i]);
@@ -36,7 +36,7 @@ class Player {
                         this.finished = true;
 
                     }
-                } else {
+                } else  {
                     this.finished = false;
                 }
             }
