@@ -6,32 +6,33 @@
     <link rel="stylesheet" href="/css/style.css">
     <script type="module" defer src="script.js"></script>
     <script type ="module" defer src ="api.js"></script>
+    <script type ="module" defer src ="stream.js"></script>
+    <script  type ='module' defer src ="event.js"></script>
     <title>Golf Scorecard</title>
 </head>
 <body>
-    <div class="container">
+    <div id="container" class="container">
         <div class="top-bar">
             <div class='left'>
             <div class="title">
                 Golf Scorecard
             </div>
             <div id="course">Course Name</div>
-            <button id="add-player-btn">ADD PLAYER</button>
            
             </div>
             <div class='right'>
                 <div class="dropdown">
-                    <button id="course-btn">CHOOSE COURSE</button>
+                    <button id="course-btn" class="button">CHOOSE COURSE</button>
                     <div id="course-drop" class="drop-content">
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button id="tee-btn">CHOOSE TEE</button>
+                    <button id="tee-btn" class="button">CHOOSE TEE</button>
                     <div id="tee-drop" class="drop-content">
-                        <div id="black" class ="drop-item">Black/Pro</div>
-                        <div id="blue" class ="drop-item">Blue/Champion</div>
-                        <div id="white" class ="drop-item">White/Men</div>
-                        <div id="red" class ="drop-item">Red/Women</div>
+                        <div id="black" class ="tee drop-item">Black/Pro</div>
+                        <div id="blue" class ="tee drop-item">Blue/Champion</div>
+                        <div id="white" class ="tee drop-item">White/Men</div>
+                        <div id="red" class ="tee drop-item">Red/Women</div>
                     </div>
                 </div>
             </div>
@@ -63,97 +64,97 @@
                 </div>
                 <div id ="row-p1" class="row color-row">
                     <div id='title_p1' class="heading box name"><input id='name-input_p1' type='text' class="name-value"><div id='name_p1' class="p-name">Player 1</div></div>
-                    <div id='hole_p1-1' class="box cell"><input id='input_p1-1' type='number'><div id="score_p1-1"></div></div>
-                    <div id='hole_p1-2' class="box cell"><input id='input_p1-2' type='number'><div id="score_p1-2"></div></div>
-                    <div id='hole_p1-3' class="box cell"><input id='input_p1-3' type='number'><div id="score_p1-3"></div></div>
-                    <div id='hole_p1-4' class="box cell"><input id='input_p1-4' type='number'><div id="score_p1-4"></div></div>
-                    <div id='hole_p1-5' class="box cell"><input id='input_p1-5' type='number'><div id="score_p1-5"></div></div>
-                    <div id='hole_p1-6' class="box cell"><input id='input_p1-6' type='number'><div id="score_p1-6"></div></div>
-                    <div id='hole_p1-7' class="box cell"><input id='input_p1-7' type='number'><div id="score_p1-7"></div></div>
-                    <div id='hole_p1-8' class="box cell"><input id='input_p1-8' type='number'><div id="score_p1-8"></div></div>
-                    <div id='hole_p1-9' class="box cell"><input id='input_p1-9' type='number'><div id="score_p1-9"></div></div>
+                    <div id='hole_p1-1' class="box cell"><input id='input_p1-1' type='number'><div class="score-cell" id="score_p1-1"></div></div>
+                    <div id='hole_p1-2' class="box cell"><input id='input_p1-2' type='number'><div class="score-cell" id="score_p1-2"></div></div>
+                    <div id='hole_p1-3' class="box cell"><input id='input_p1-3' type='number'><div class="score-cell" id="score_p1-3"></div></div>
+                    <div id='hole_p1-4' class="box cell"><input id='input_p1-4' type='number'><div class="score-cell" id="score_p1-4"></div></div>
+                    <div id='hole_p1-5' class="box cell"><input id='input_p1-5' type='number'><div class="score-cell" id="score_p1-5"></div></div>
+                    <div id='hole_p1-6' class="box cell"><input id='input_p1-6' type='number'><div class="score-cell" id="score_p1-6"></div></div>
+                    <div id='hole_p1-7' class="box cell"><input id='input_p1-7' type='number'><div class="score-cell" id="score_p1-7"></div></div>
+                    <div id='hole_p1-8' class="box cell"><input id='input_p1-8' type='number'><div class="score-cell" id="score_p1-8"></div></div>
+                    <div id='hole_p1-9' class="box cell"><input id='input_p1-9' type='number'><div class="score-cell" id="score_p1-9"></div></div>
                     <div id='out_p1' class="heading box"></div>
-                    <div id='hole_p1-10' class="box cell"><input id='input_p1-10' type='number'><div id="score_p1-10"></div></div>
-                    <div id='hole_p1-11' class="box cell"><input id='input_p1-11' type='number'><div id="score_p1-11"></div></div>
-                    <div id='hole_p1-12' class="box cell"><input id='input_p1-12' type='number'><div id="score_p1-12"></div></div>
-                    <div id='hole_p1-13' class="box cell"><input id='input_p1-13' type='number'><div id="score_p1-13"></div></div>
-                    <div id='hole_p1-14' class="box cell"><input id='input_p1-14' type='number'><div id="score_p1-14"></div></div>
-                    <div id='hole_p1-15' class="box cell"><input id='input_p1-15' type='number'><div id="score_p1-15"></div></div>
-                    <div id='hole_p1-16' class="box cell"><input id='input_p1-16' type='number'><div id="score_p1-16"></div></div>
-                    <div id='hole_p1-17' class="box cell"><input id='input_p1-17' type='number'><div id="score_p1-17"></div></div>
-                    <div id='hole_p1-18' class="box cell"><input id='input_p1-18' type='number'><div id="score_p1-18"></div></div>
+                    <div id='hole_p1-10' class="box cell"><input id='input_p1-10' type='number'><div class="score-cell" id="score_p1-10"></div></div>
+                    <div id='hole_p1-11' class="box cell"><input id='input_p1-11' type='number'><div class="score-cell" id="score_p1-11"></div></div>
+                    <div id='hole_p1-12' class="box cell"><input id='input_p1-12' type='number'><div class="score-cell" id="score_p1-12"></div></div>
+                    <div id='hole_p1-13' class="box cell"><input id='input_p1-13' type='number'><div class="score-cell" id="score_p1-13"></div></div>
+                    <div id='hole_p1-14' class="box cell"><input id='input_p1-14' type='number'><div class="score-cell" id="score_p1-14"></div></div>
+                    <div id='hole_p1-15' class="box cell"><input id='input_p1-15' type='number'><div class="score-cell" id="score_p1-15"></div></div>
+                    <div id='hole_p1-16' class="box cell"><input id='input_p1-16' type='number'><div class="score-cell" id="score_p1-16"></div></div>
+                    <div id='hole_p1-17' class="box cell"><input id='input_p1-17' type='number'><div class="score-cell" id="score_p1-17"></div></div>
+                    <div id='hole_p1-18' class="box cell"><input id='input_p1-18' type='number'><div class="score-cell" id="score_p1-18"></div></div>
                     <div id='in_p1' class="heading box"></div>
                     <div id='total_p1' class="heading box"></div>
                 </div>
                 <div id ="row-p2" class="row color-row">
                     <div id='title_p2' class="heading box name"><input id='name-input_p2' type='text' class="name-value"><div id='name_p2' class="p-name">Player 2</div></div>
-                    <div id='hole_p2-1' class="box cell"><input id='input_p2-1' type='number'><div id="score_p2-1"></div></div>
-                    <div id='hole_p2-2' class="box cell"><input id='input_p2-2' type='number'><div id="score_p2-2"></div></div>
-                    <div id='hole_p2-3' class="box cell"><input id='input_p2-3' type='number'><div id="score_p2-3"></div></div>
-                    <div id='hole_p2-4' class="box cell"><input id='input_p2-4' type='number'><div id="score_p2-4"></div></div>
-                    <div id='hole_p2-5' class="box cell"><input id='input_p2-5' type='number'><div id="score_p2-5"></div></div>
-                    <div id='hole_p2-6' class="box cell"><input id='input_p2-6' type='number'><div id="score_p2-6"></div></div>
-                    <div id='hole_p2-7' class="box cell"><input id='input_p2-7' type='number'><div id="score_p2-7"></div></div>
-                    <div id='hole_p2-8' class="box cell"><input id='input_p2-8' type='number'><div id="score_p2-8"></div></div>
-                    <div id='hole_p2-9' class="box cell"><input id='input_p2-9' type='number'><div id="score_p2-9"></div></div>
+                    <div id='hole_p2-1' class="box cell"><input id='input_p2-1' type='number'><div class="score-cell" id="score_p2-1"></div></div>
+                    <div id='hole_p2-2' class="box cell"><input id='input_p2-2' type='number'><div class="score-cell" id="score_p2-2"></div></div>
+                    <div id='hole_p2-3' class="box cell"><input id='input_p2-3' type='number'><div class="score-cell" id="score_p2-3"></div></div>
+                    <div id='hole_p2-4' class="box cell"><input id='input_p2-4' type='number'><div class="score-cell" id="score_p2-4"></div></div>
+                    <div id='hole_p2-5' class="box cell"><input id='input_p2-5' type='number'><div class="score-cell" id="score_p2-5"></div></div>
+                    <div id='hole_p2-6' class="box cell"><input id='input_p2-6' type='number'><div class="score-cell" id="score_p2-6"></div></div>
+                    <div id='hole_p2-7' class="box cell"><input id='input_p2-7' type='number'><div class="score-cell" id="score_p2-7"></div></div>
+                    <div id='hole_p2-8' class="box cell"><input id='input_p2-8' type='number'><div class="score-cell" id="score_p2-8"></div></div>
+                    <div id='hole_p2-9' class="box cell"><input id='input_p2-9' type='number'><div class="score-cell" id="score_p2-9"></div></div>
                     <div id='out_p2' class="heading box"></div>
-                    <div id='hole_p2-10' class="box cell"><input id='input_p2-10' type='number'><div id="score_p2-10"></div></div>
-                    <div id='hole_p2-11' class="box cell"><input id='input_p2-11' type='number'><div id="score_p2-11"></div></div>
-                    <div id='hole_p2-12' class="box cell"><input id='input_p2-12' type='number'><div id="score_p2-12"></div></div>
-                    <div id='hole_p2-13' class="box cell"><input id='input_p2-13' type='number'><div id="score_p2-13"></div></div>
-                    <div id='hole_p2-14' class="box cell"><input id='input_p2-14' type='number'><div id="score_p2-14"></div></div>
-                    <div id='hole_p2-15' class="box cell"><input id='input_p2-15' type='number'><div id="score_p2-15"></div></div>
-                    <div id='hole_p2-16' class="box cell"><input id='input_p2-16' type='number'><div id="score_p2-16"></div></div>
-                    <div id='hole_p2-17' class="box cell"><input id='input_p2-17' type='number'><div id="score_p2-17"></div></div>
-                    <div id='hole_p2-18' class="box cell"><input id='input_p2-18' type='number'><div id="score_p2-18"></div></div>
+                    <div id='hole_p2-10' class="box cell"><input id='input_p2-10' type='number'><div class="score-cell" id="score_p2-10"></div></div>
+                    <div id='hole_p2-11' class="box cell"><input id='input_p2-11' type='number'><div class="score-cell" id="score_p2-11"></div></div>
+                    <div id='hole_p2-12' class="box cell"><input id='input_p2-12' type='number'><div class="score-cell" id="score_p2-12"></div></div>
+                    <div id='hole_p2-13' class="box cell"><input id='input_p2-13' type='number'><div class="score-cell" id="score_p2-13"></div></div>
+                    <div id='hole_p2-14' class="box cell"><input id='input_p2-14' type='number'><div class="score-cell" id="score_p2-14"></div></div>
+                    <div id='hole_p2-15' class="box cell"><input id='input_p2-15' type='number'><div class="score-cell" id="score_p2-15"></div></div>
+                    <div id='hole_p2-16' class="box cell"><input id='input_p2-16' type='number'><div class="score-cell" id="score_p2-16"></div></div>
+                    <div id='hole_p2-17' class="box cell"><input id='input_p2-17' type='number'><div class="score-cell" id="score_p2-17"></div></div>
+                    <div id='hole_p2-18' class="box cell"><input id='input_p2-18' type='number'><div class="score-cell" id="score_p2-18"></div></div>
                     <div id='in_p2' class="heading box"></div>
                     <div id='total_p2' class="heading box"></div>
                 </div>
                 <div id ="row-p3" class="row color-row">
                     <div id='title_p3' class="heading box name"><input id='name-input_p3' type='text' class="name-value"><div id='name_p3' class="p-name">Player 3</div></div>
-                    <div id='hole_p3-1' class="box cell"><input id='input_p3-1' type='number'><div id="score_p3-1"></div></div>
-                    <div id='hole_p3-2' class="box cell"><input id='input_p3-2' type='number'><div id="score_p3-2"></div></div>
-                    <div id='hole_p3-3' class="box cell"><input id='input_p3-3' type='number'><div id="score_p3-3"></div></div>
-                    <div id='hole_p3-4' class="box cell"><input id='input_p3-4' type='number'><div id="score_p3-4"></div></div>
-                    <div id='hole_p3-5' class="box cell"><input id='input_p3-5' type='number'><div id="score_p3-5"></div></div>
-                    <div id='hole_p3-6' class="box cell"><input id='input_p3-6' type='number'><div id="score_p3-6"></div></div>
-                    <div id='hole_p3-7' class="box cell"><input id='input_p3-7' type='number'><div id="score_p3-7"></div></div>
-                    <div id='hole_p3-8' class="box cell"><input id='input_p3-8' type='number'><div id="score_p3-8"></div></div>
-                    <div id='hole_p3-9' class="box cell"><input id='input_p3-9' type='number'><div id="score_p3-9"></div></div>
+                    <div id='hole_p3-1' class="box cell"><input id='input_p3-1' type='number'><div class="score-cell" id="score_p3-1"></div></div>
+                    <div id='hole_p3-2' class="box cell"><input id='input_p3-2' type='number'><div class="score-cell" id="score_p3-2"></div></div>
+                    <div id='hole_p3-3' class="box cell"><input id='input_p3-3' type='number'><div class="score-cell" id="score_p3-3"></div></div>
+                    <div id='hole_p3-4' class="box cell"><input id='input_p3-4' type='number'><div class="score-cell" id="score_p3-4"></div></div>
+                    <div id='hole_p3-5' class="box cell"><input id='input_p3-5' type='number'><div class="score-cell" id="score_p3-5"></div></div>
+                    <div id='hole_p3-6' class="box cell"><input id='input_p3-6' type='number'><div class="score-cell" id="score_p3-6"></div></div>
+                    <div id='hole_p3-7' class="box cell"><input id='input_p3-7' type='number'><div class="score-cell" id="score_p3-7"></div></div>
+                    <div id='hole_p3-8' class="box cell"><input id='input_p3-8' type='number'><div class="score-cell" id="score_p3-8"></div></div>
+                    <div id='hole_p3-9' class="box cell"><input id='input_p3-9' type='number'><div class="score-cell" id="score_p3-9"></div></div>
                     <div id='out_p3' class="heading box"></div>
-                    <div id='hole_p3-10' class="box cell"><input id='input_p3-10' type='number'><div id="score_p3-10"></div></div>
-                    <div id='hole_p3-11' class="box cell"><input id='input_p3-11' type='number'><div id="score_p3-11"></div></div>
-                    <div id='hole_p3-12' class="box cell"><input id='input_p3-12' type='number'><div id="score_p3-12"></div></div>
-                    <div id='hole_p3-13' class="box cell"><input id='input_p3-13' type='number'><div id="score_p3-13"></div></div>
-                    <div id='hole_p3-14' class="box cell"><input id='input_p3-14' type='number'><div id="score_p3-14"></div></div>
-                    <div id='hole_p3-15' class="box cell"><input id='input_p3-15' type='number'><div id="score_p3-15"></div></div>
-                    <div id='hole_p3-16' class="box cell"><input id='input_p3-16' type='number'><div id="score_p3-16"></div></div>
-                    <div id='hole_p3-17' class="box cell"><input id='input_p3-17' type='number'><div id="score_p3-17"></div></div>
-                    <div id='hole_p3-18' class="box cell"><input id='input_p3-18' type='number'><div id="score_p3-18"></div></div>
+                    <div id='hole_p3-10' class="box cell"><input id='input_p3-10' type='number'><div class="score-cell" id="score_p3-10"></div></div>
+                    <div id='hole_p3-11' class="box cell"><input id='input_p3-11' type='number'><div class="score-cell" id="score_p3-11"></div></div>
+                    <div id='hole_p3-12' class="box cell"><input id='input_p3-12' type='number'><div class="score-cell" id="score_p3-12"></div></div>
+                    <div id='hole_p3-13' class="box cell"><input id='input_p3-13' type='number'><div class="score-cell" id="score_p3-13"></div></div>
+                    <div id='hole_p3-14' class="box cell"><input id='input_p3-14' type='number'><div class="score-cell" id="score_p3-14"></div></div>
+                    <div id='hole_p3-15' class="box cell"><input id='input_p3-15' type='number'><div class="score-cell" id="score_p3-15"></div></div>
+                    <div id='hole_p3-16' class="box cell"><input id='input_p3-16' type='number'><div class="score-cell" id="score_p3-16"></div></div>
+                    <div id='hole_p3-17' class="box cell"><input id='input_p3-17' type='number'><div class="score-cell" id="score_p3-17"></div></div>
+                    <div id='hole_p3-18' class="box cell"><input id='input_p3-18' type='number'><div class="score-cell" id="score_p3-18"></div></div>
                     <div id='in_p3' class="heading box"></div>
                     <div id='total_p3' class="heading box"></div>
                 </div>
                 <div id ="row-p4" class="row color-row">
                     <div id='title_p4' class="heading box name"><input id='name-input_p4' type='text' class="name-value"><div id='name_p4' class="p-name">Player 4</div></div>
-                    <div id='hole_p4-1' class="box cell"><input id='input_p4-1' type='number'><div id="score_p4-1"></div></div>
-                    <div id='hole_p4-2' class="box cell"><input id='input_p4-2' type='number'><div id="score_p4-2"></div></div>
-                    <div id='hole_p4-3' class="box cell"><input id='input_p4-3' type='number'><div id="score_p4-3"></div></div>
-                    <div id='hole_p4-4' class="box cell"><input id='input_p4-4' type='number'><div id="score_p4-4"></div></div>
-                    <div id='hole_p4-5' class="box cell"><input id='input_p4-5' type='number'><div id="score_p4-5"></div></div>
-                    <div id='hole_p4-6' class="box cell"><input id='input_p4-6' type='number'><div id="score_p4-6"></div></div>
-                    <div id='hole_p4-7' class="box cell"><input id='input_p4-7' type='number'><div id="score_p4-7"></div></div>
-                    <div id='hole_p4-8' class="box cell"><input id='input_p4-8' type='number'><div id="score_p4-8"></div></div>
-                    <div id='hole_p4-9' class="box cell"><input id='input_p4-9' type='number'><div id="score_p4-9"></div></div>
+                    <div id='hole_p4-1' class="box cell"><input id='input_p4-1' type='number'><div class="score-cell" id="score_p4-1"></div></div>
+                    <div id='hole_p4-2' class="box cell"><input id='input_p4-2' type='number'><div class="score-cell" id="score_p4-2"></div></div>
+                    <div id='hole_p4-3' class="box cell"><input id='input_p4-3' type='number'><div class="score-cell" id="score_p4-3"></div></div>
+                    <div id='hole_p4-4' class="box cell"><input id='input_p4-4' type='number'><div class="score-cell" id="score_p4-4"></div></div>
+                    <div id='hole_p4-5' class="box cell"><input id='input_p4-5' type='number'><div class="score-cell" id="score_p4-5"></div></div>
+                    <div id='hole_p4-6' class="box cell"><input id='input_p4-6' type='number'><div class="score-cell" id="score_p4-6"></div></div>
+                    <div id='hole_p4-7' class="box cell"><input id='input_p4-7' type='number'><div class="score-cell" id="score_p4-7"></div></div>
+                    <div id='hole_p4-8' class="box cell"><input id='input_p4-8' type='number'><div class="score-cell" id="score_p4-8"></div></div>
+                    <div id='hole_p4-9' class="box cell"><input id='input_p4-9' type='number'><div class="score-cell" id="score_p4-9"></div></div>
                     <div id='out_p4' class="heading box"></div>
-                    <div id='hole_p4-10' class="box cell"><input id='input_p4-10' type='number'><div id="score_p4-10"></div></div>
-                    <div id='hole_p4-11' class="box cell"><input id='input_p4-11' type='number'><div id="score_p4-11"></div></div>
-                    <div id='hole_p4-12' class="box cell"><input id='input_p4-12' type='number'><div id="score_p4-12"></div></div>
-                    <div id='hole_p4-13' class="box cell"><input id='input_p4-13' type='number'><div id="score_p4-13"></div></div>
-                    <div id='hole_p4-14' class="box cell"><input id='input_p4-14' type='number'><div id="score_p4-14"></div></div>
-                    <div id='hole_p4-15' class="box cell"><input id='input_p4-15' type='number'><div id="score_p4-15"></div></div>
-                    <div id='hole_p4-16' class="box cell"><input id='input_p4-16' type='number'><div id="score_p4-16"></div></div>
-                    <div id='hole_p4-17' class="box cell"><input id='input_p4-17' type='number'><div id="score_p4-17"></div></div>
-                    <div id='hole_p4-18' class="box cell"><input id='input_p4-18' type='number'><div id="score_p4-18"></div></div>
+                    <div id='hole_p4-10' class="box cell"><input id='input_p4-10' type='number'><div class="score-cell" id="score_p4-10"></div></div>
+                    <div id='hole_p4-11' class="box cell"><input id='input_p4-11' type='number'><div class="score-cell" id="score_p4-11"></div></div>
+                    <div id='hole_p4-12' class="box cell"><input id='input_p4-12' type='number'><div class="score-cell" id="score_p4-12"></div></div>
+                    <div id='hole_p4-13' class="box cell"><input id='input_p4-13' type='number'><div class="score-cell" id="score_p4-13"></div></div>
+                    <div id='hole_p4-14' class="box cell"><input id='input_p4-14' type='number'><div class="score-cell" id="score_p4-14"></div></div>
+                    <div id='hole_p4-15' class="box cell"><input id='input_p4-15' type='number'><div class="score-cell" id="score_p4-15"></div></div>
+                    <div id='hole_p4-16' class="box cell"><input id='input_p4-16' type='number'><div class="score-cell" id="score_p4-16"></div></div>
+                    <div id='hole_p4-17' class="box cell"><input id='input_p4-17' type='number'><div class="score-cell" id="score_p4-17"></div></div>
+                    <div id='hole_p4-18' class="box cell"><input id='input_p4-18' type='number'><div class="score-cell" id="score_p4-18"></div></div>
                     <div id='in_p4' class="heading box"></div>
                     <div id='total_p4' class="heading box"></div>
                 </div>
@@ -181,8 +182,8 @@
                     <div id="par_in" class="heading box"></div>
                     <div id="par_total" class="heading box"></div>
                 </div>
-                <div class="row color-row">
-                    <div id="yard_head" class="heading box name">Yards</div>
+                <div id="tee-color" class="row color-row">
+                    <div id="yard_head" class="heading box name">Tee/Yards</div>
                     <div id="yard_1"class="box cell"></div>
                     <div id="yard_2"class="box cell"></div>
                     <div id="yard_3"class="box cell"></div>
@@ -229,6 +230,10 @@
                     <div id="hcap_in"class="heading box"></div>
                     <div id="hcap_total"class="heading box"></div>
                 </div>
+                <div id='1message' style="display: none;" class='display-message'>This is the message</div>
+                <div id='2message' style="display: none;" class='display-message'>This is the message</div>
+                <div id='3message' style="display: none;" class='display-message'>This is the message</div>
+                <div id='4message' style="display: none;" class='display-message'>This is the message</div>
         </div>
         
     </div>

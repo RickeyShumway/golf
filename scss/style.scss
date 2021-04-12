@@ -24,6 +24,9 @@ html, body {
                 display: flex;
                 flex-direction: column;
             }
+            .drop-item:hover {
+                background-color: lightblue;
+            }
         }
     }
 }
@@ -63,6 +66,17 @@ html, body {
             width: 100%;
             display: none;
         }
+        .score-cell {
+            display: flex;
+        }
     }
 }
 
+#tee-color {
+    background-color: lightgray;
+   
+    border: 5px;
+    border-right: 0;
+    border-left: 0;
+    border-style: dotted;
+}
