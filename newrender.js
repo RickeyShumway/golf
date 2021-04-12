@@ -125,7 +125,7 @@ function renderScore() {
                 document.getElementById(prop3).style.display = 'none';
             }
         } bigArr.push(scoreArr);
-    } 
+    }
     currentBoard.finishedHoles();
   
 }
